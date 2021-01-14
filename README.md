@@ -17,6 +17,7 @@ An ideas app for people to capture their ideas. It supports CRUD for the ideas.
 3. Postgres
 4. Typeorm
 5. JWT
+6. Tailwind CSS
 
 #### Setup
 1. Clone the repository
