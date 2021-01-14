@@ -1,5 +1,5 @@
-/ideas-capturing-api/node_modules
-/ideas-capturing-api/dist
+/api/node_modules
+/api/dist
 
-/ideas-capturing-ui/node_modules
-/ideas-capturing-ui/dist
+/ui/node_modules
+/ui/dist
