@@ -1,0 +1,23 @@
+2021-02-06 21:59:58 info: [app] Connected to database. Connection: default / ideas
+2021-02-06 21:59:58 info: [app] Server Started at http://127.0.0.1:3002
+2021-02-06 22:04:06 info: [app] Connected to database. Connection: default / ideas
+2021-02-06 22:04:06 info: [app] Server Started at http://127.0.0.1:3002
+2021-02-06 22:04:22 info: [app] Connected to database. Connection: default / ideas
+2021-02-06 22:04:22 info: [app] Server Started at http://127.0.0.1:3002
+2021-02-06 22:05:12 info: [app] Connected to database. Connection: default / ideas
+2021-02-06 22:05:12 info: [app] Server Started at http://127.0.0.1:3002
+2021-02-06 22:06:19 info: [app] Connected to database. Connection: default / ideas
+2021-02-06 22:06:19 info: [app] Server Started at http://127.0.0.1:3002
+2021-02-06 22:06:24 info: [services:user.service] Create a new user[{"email":"madhuri@gmail.com","password":"$2b$10$hmEKE37YVzbFOXIR.tfDB.RCn.QmWwlufT.KwCyrWxQCJnSg4GEWy","name":"Madhuri Dixit"}]
+2021-02-06 22:06:43 info: [services:user.service] Create a new user[{"email":"madhuri@gmail.com","password":"$2b$10$LggPflnwlqvuSijfnf4GLOmA4mRw.SFlyBKMWZASXz/Jm9tVOuk0O","name":"Madhuri Dixit"}]
+2021-02-06 22:07:56 info: [app] Connected to database. Connection: default / ideas
+2021-02-06 22:07:56 info: [app] Server Started at http://127.0.0.1:3002
+2021-02-06 22:08:07 info: [app] Connected to database. Connection: default / ideas
+2021-02-06 22:08:07 info: [app] Server Started at http://127.0.0.1:3002
+2021-02-06 22:14:51 info: [app] Connected to database. Connection: default / ideas
+2021-02-06 22:14:51 info: [app] Server Started at http://127.0.0.1:3002
+2021-02-06 22:14:56 error: [middlewares:genericErrorHandler] Error: {"code":400,"errors":[{"msg":"Invalid value","param":"email","location":"body"},{"msg":"Invalid value","param":"email","location":"body"}]}
+2021-02-06 22:15:20 error: [middlewares:genericErrorHandler] Error: {"code":400,"errors":[{"value":"madhuri","msg":"Invalid value","param":"email","location":"body"}]}
+2021-02-06 22:15:28 error: [middlewares:genericErrorHandler] Error: {"code":400,"errors":[{"value":"madhuri@gmail","msg":"Invalid value","param":"email","location":"body"}]}
+2021-02-06 22:15:31 info: [services:user.service] Create a new user[{"email":"madhuri@gmail.com","password":"$2b$10$5vQ21PMa81GgrKHW2E7PG.LB2SbJpvMCN/l1W90zGbkqXSeJHYouO","name":"Madhuri Dixit"}]
+2021-02-06 22:15:31 error: [middlewares:genericErrorHandler] Error: {"code":400,"error":{"message":"duplicate key value violates unique constraint \"UQ_e12875dfb3b1d92d7d7c5377e22\"","length":305,"name":"QueryFailedError","severity":"ERROR","code":"23505","detail":"Key (email)=(madhuri@gmail.com) already exists.","schema":"public","table":"user","constraint":"UQ_e12875dfb3b1d92d7d7c5377e22","file":"d:\\pginstaller.auto\\postgres.windows-x64\\src\\backend\\access\\nbtree\\nbtinsert.c","line":"534","routine":"_bt_check_unique","query":"INSERT INTO \"user\"(\"email\", \"name\", \"password\") VALUES ($1, $2, $3) RETURNING \"id\"","parameters":["madhuri@gmail.com","Madhuri Dixit","$2b$10$5vQ21PMa81GgrKHW2E7PG.LB2SbJpvMCN/l1W90zGbkqXSeJHYouO"]}}
