@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { Auth } from "./controllers/Auth";
 import Register from "./controllers/Register";
-import { Me } from "./controllers/Me";
+import Me from "./controllers/Me";
 import { Logout } from "./controllers/Logout";
 import {
   CreateIdea,
@@ -20,7 +20,7 @@ router.use("/register", Register);
 
 // router.post("/logout", Logout);
 
-// router.get("/me", isAuth, Me);
+router.get("/me", isAuth, Me);
 
 // router.post("/ideas", isAuth, CreateIdea);
 

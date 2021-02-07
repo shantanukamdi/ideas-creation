@@ -1,28 +1,36 @@
-import { Request, Response } from "express";
+import { Request, Response, NextFunction, Router } from "express";
+import { body, validationResult } from "express-validator";
+import * as HttpStatus from "http-status-codes";
+
 import { User } from "../entities/User";
-import { getRepository } from "typeorm";
+import { UserService } from "../services/user.service";
 
-export const Me = async (req: Request, res: Response) => {
-  /** get the username and password from the request*/
-  const payload = req.payload;
+const router: Router = Router();
 
-  const userRepository = await getRepository(User);
+router
+  .route("/")
+  .get(async (req: Request, res: Response, next: NextFunction) => {
+    /** get the username and password from the request*/
+    const payload = req.payload;
 
-  /** search for the user in the db, it should be either present or absent in the db */
-  const userFromDB = await userRepository.findOne({
-    where: {
-      id: payload.userId,
-    },
-    select: ["email", "id", "name"],
+    const userService = new UserService();
+
+    const user = userService.getById(payload.userId);
+
+    if (!user) {
+      const error = {
+        sucess: false,
+        message: "User does not exist!",
+        code: HttpStatus.StatusCodes.BAD_REQUEST,
+      };
+      next(error);
+    } else {
+      res.status(HttpStatus.StatusCodes.OK).json({
+        success: true,
+        data: user,
+      });
+      return;
+    }
   });
 
-  if (!userFromDB) {
-    res.status(404).send({
-      message: "User does not exist!",
-    });
-    return;
-  } else {
-    res.status(200).send(userFromDB);
-    return;
-  }
-};
+export default router;
