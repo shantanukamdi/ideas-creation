@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 import { body, validationResult } from "express-validator";
 import * as HttpStatus from "http-status-codes";
 import { User } from "../entities/User";
-import config from "src/config/config";
+import config from "../config/config";
 import { UserService } from "../services/user.service";
 
 const router: Router = Router();

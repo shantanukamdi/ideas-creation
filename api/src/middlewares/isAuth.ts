@@ -1,5 +1,8 @@
 import { RequestHandler, Request, Response, NextFunction } from "express";
+import config from "../config/config";
 import { verifyToken } from "../utils/utils";
+
+const { auth } = config;
 
 export const isAuth: RequestHandler<{}, any, any, {}> = (
   req: Request,
@@ -18,7 +21,7 @@ export const isAuth: RequestHandler<{}, any, any, {}> = (
   }
 
   try {
-    const payload: any = verifyToken(token, req.app.locals.JWT_SECRET);
+    const payload: any = verifyToken(token, auth.secretKey);
     (req as any).payload = payload;
     next();
     return;

@@ -28,7 +28,11 @@ export class UserService {
   async getById(id: string | number): Promise<User | undefined> {
     this.logger.info("Fetching user by id: ", id);
     if (id) {
-      return await this.userRepository.findOne(id);
+      return await this.userRepository.findOne({
+        where: {
+          id,
+        },
+      });
     }
     return Promise.reject(false);
   }

@@ -13,7 +13,7 @@ export default {
   host: process.env.APP_HOST || "localhost",
   port: process.env.APP_PORT || 3002,
   auth: {
-    secretKey: process.env.SECRECT_KEY || "randomstring",
+    secretKey: process.env.SECRET_KEY || "randomstring",
   },
   logging: {
     dir: process.env.LOGGING_DIR || "logs",

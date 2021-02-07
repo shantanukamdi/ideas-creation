@@ -4,7 +4,7 @@ import { getRepository } from "typeorm";
 import { Idea as I } from "../entities/Idea";
 
 export const CreateIdea = async (
-  req: Request,
+  req: any,
   res: Response,
   next: NextFunction
 ) => {
@@ -38,7 +38,7 @@ export const CreateIdea = async (
 };
 
 export const GetAllIdeas = async (
-  req: Request,
+  req: any,
   res: Response,
   next: NextFunction
 ) => {

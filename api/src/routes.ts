@@ -16,13 +16,13 @@ const router: Router = Router();
 
 router.use("/register", Register);
 
-router.post("/auth", Auth);
+router.use("/auth", Auth);
 
-// router.post("/logout", Logout);
+// router.use("/logout", Logout);
 
-router.get("/me", isAuth, Me);
+router.use("/me", isAuth, Me);
 
-// router.post("/ideas", isAuth, CreateIdea);
+router.use("/ideas", isAuth, CreateIdea);
 
 // router.get("/ideas", isAuth, GetAllIdeas);
 
