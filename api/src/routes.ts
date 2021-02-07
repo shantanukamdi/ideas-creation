@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { Auth } from "./controllers/Auth";
+import Auth from "./controllers/Auth";
 import Register from "./controllers/Register";
 import Me from "./controllers/Me";
 import { Logout } from "./controllers/Logout";
@@ -16,7 +16,7 @@ const router: Router = Router();
 
 router.use("/register", Register);
 
-// router.post("/auth", Auth);
+router.post("/auth", Auth);
 
 // router.post("/logout", Logout);
 
